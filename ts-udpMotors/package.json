@@ -1,0 +1,28 @@
+{
+  "name": "ts-udpmotors",
+  "version": "1.0.0",
+  "description": "udp client to remote control 4 motors and 2 servos",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx tsx udpMotors.ts",
+    "check1": "npx tsx checkUdpClient.ts",    
+    "server": "npx tsx serverPrinter.ts",
+    "check2": "npx tsx checkGamePadListener.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "udp",
+    "motors",
+    "servos"
+  ],
+  "author": "Mario",
+  "license": "ISC",
+  "dependencies": {
+    "gamecontroller": "^0.0.2",
+    "tsx": "^4.11.2",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.2"
+  }
+}
