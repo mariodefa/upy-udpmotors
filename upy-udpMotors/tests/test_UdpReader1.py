@@ -23,7 +23,7 @@ class TestUdpReader1(unittest.TestCase):
         ]
 
         # test
-        actual = UdpReader1.create_command_list_from_packet(packet, actual)
+        actual = UdpReader1.create_command_list_from_packet(packet)
 
         # check
         for i in range(N_COMMANDS):
