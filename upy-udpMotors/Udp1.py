@@ -7,7 +7,7 @@ from udp_constants import PACKET_SIZE, N_COMMANDS
 class Udp1:
     udp = UDP()
     incomingPacket = bytearray(PACKET_SIZE)
-    commands = [Command1() for _ in range(N_COMMANDS)]
+    commands = [None] * N_COMMANDS
 
     @staticmethod
     def start_udp_socket():
@@ -20,5 +20,5 @@ class Udp1:
         if Udp1.udp:
             packetSize = Udp1.udp.readinto(Udp1.incomingPacket, PACKET_SIZE)
             if packetSize > 0 and packetSize == PACKET_SIZE:
-                UdpReader1.create_command_list_from_packet(Udp1.incomingPacket, Udp1.commands)
+                Udp1.commands = UdpReader1.create_command_list_from_packet(Udp1.incomingPacket)
                 Motors1.apply_motors_commands(Udp1.commands)
